@@ -19,5 +19,7 @@ export default defineConfig({
 
 	output: "server",
 	adapter: vercel(),
-	prefetch: true
+	prefetch: {
+		prefetchAll: true,
+	},
 });

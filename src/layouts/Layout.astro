@@ -1,6 +1,6 @@
 ---
 import "../styles.css";
-
+import "@fontsource/inter";
 export interface Props {
   title?: string;
 }
@@ -17,23 +17,12 @@ const { title = "Voumy - Where Words Come Alive" } = Astro.props;
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <meta name="generator" content={Astro.generator} />
 
-
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../img/favicon.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png" />
     <!-- local icons -->
     <link
       rel="stylesheet"
       id="icons"
       href="https://unpkg.com/bootstrap-icons/font/bootstrap-icons.min.css"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap"
-      rel="stylesheet"
     />
 
     <title>{title}</title>
