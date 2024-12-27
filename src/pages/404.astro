@@ -9,9 +9,6 @@
   <!-- Custom styles -->
   <link rel="stylesheet" href="src/css/style.css">
 
-  <!-- Prism -->
-  <link rel="stylesheet" href="src/css/prism.css">
-
   <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon.png">
   <!-- local icons -->
   <link rel="stylesheet" id="icons" href="https://unpkg.com/bootstrap-icons/font/bootstrap-icons.min.css">
@@ -78,13 +75,66 @@
         <!-- menu -->
         <ul class="relative flex md:items-center md:justify-center max-md:flex-col max-md:h-full max-md:overflow-auto text-sm md:text-base uppercase">
           <li class="relative">
-            <a href="docs.html" class="active py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Get Started</a>
+            <a href="index.html" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Homepage</a>
+          </li>
+          <!-- dropdown -->
+          <li x-data="{ dropdown: false }" class="relative  md:[&_>button]:hover:bg-neutral-100">
+            <button @click="dropdown = ! dropdown" :class="! dropdown ? '' : 'bg-neutral-100'" class="uppercase w-full py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">
+              Pages<i :class="! dropdown ? '' : 'show'" class="[&.show]:-rotate-180 transition duration-400 bi bi-chevron-down"></i>
+            </button>
+
+            <ul 
+            x-show="dropdown" 
+            x-transition.duration.500ms 
+            :class="! dropdown ? '' : 'show'"
+            @click.outside="dropdown = false"
+            class="[&.show]:!opacity-100 [&.show]:!visible max-md:[&.show]:!h-auto max-md:h-0 opacity-0 invisible dropdown-menu md:z-50 relative md:absolute capitalize md:top-full end-0 md:-end-1/4 min-w-40 bg-white border border-dashed border-neutral-200">
+              <li>
+                <a href="category.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Category</a>
+              </li>
+              <li>
+                <a href="single.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Single Post</a>
+              </li>
+              <li>
+                <a href="single-fullwidth.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Fullwidth</a>
+              </li>
+              <li>
+                <a href="page.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Page</a>
+              </li>
+              <li>
+                <a href="contact.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Contact</a>
+              </li>
+              <li>
+                <a href="author.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Author</a>
+              </li>
+              <li>
+                <a href="search.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Search</a>
+              </li>
+              <li>
+                <a href="tags.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Tags</a>
+              </li>
+              <li>
+                <a href="404.html" class="flex px-4 py-1.5 hover:bg-neutral-100">404</a>
+              </li>
+            </ul>
           </li>
           <li class="relative">
-            <a href="docs/free-vs-pro.html" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Free vs Pro Version</a>
+            <a href="docs/free-vs-pro.html" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Free vs Pro</a>
           </li>
           <li class="relative">
-            <a href="docs/changelogs.html" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Changelogs</a>
+            <a href="category.html" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Travel</a>
+          </li>
+          <li class="relative">
+            <a href="category.html" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Lifestyle</a>
+          </li>
+          <li class="relative">
+            <a href="category.html" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Techno</a>
+          </li>
+
+          <li class="relative max-md:hidden">
+            <button @click="searchtoggle = !searchtoggle" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">
+              <i class="bi bi-search"></i>
+            </button>
           </li>
         </ul>
         <!-- credit -->
@@ -111,23 +161,6 @@
                   <span class="bi bi-search text-base leading-none"></span>
                 </button>
               </div>
-              <!-- result -->
-              <div class="flex flex-col gap-2 mb-8">
-                <h3 class="text-base font-medium uppercase pb-2 border-b border-dashed border-neutral-200">Posts</h3>
-                <div class="flex flex-col gap-1.5">
-                  <a href="#" class="text-base font-medium">The Tourist Destination That...</a>
-                  <a href="#" class="text-base font-medium">Top 10 Must-Try Street Foods...</a>
-                  <a href="#" class="text-base font-medium">Master Photography: Tips For...</a>
-                </div>
-              </div>
-               <!-- result -->
-              <div class="flex flex-col gap-2">
-                <h3 class="text-base font-medium uppercase pb-2 border-b border-dashed border-neutral-200">Pages</h3>
-                <div class="flex flex-col gap-1.5">
-                  <a href="#" class="text-base font-medium">About Us</a>
-                  <a href="#" class="text-base font-medium">Term of Use</a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -139,123 +172,18 @@
 
   <!-- content -->
   <main class="relative">
-    <!-- hero -->
+    <!-- Hero -->
     <div class="text-center border-b border-dashed border-neutral-200">
       <div class="max-w-2xl mx-auto py-12 px-6">
-        <h2 class="text-2xl lg:text-3xl font-medium">Documentation</h2>
-      </div>
-    </div>
-
-    <!-- container -->
-    <div class="container xl:max-w-6xl mx-auto px-4 flex flex-col gap-4 lg:gap-6">
-      <!-- layout -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 py-6">
-        <!-- sidebar -->
-        <aside class="max-lg:mb-10 lg:col-span-1 lg:pe-6">
-          <div class="flex flex-col gap-4 lg:gap-6 hc-sticky">
-            <!-- widget -->
-            <div class="bg-neutral-50 border border-dashed border-neutral-200">
-              <h3 class="w-full px-6 py-3 border-b border-dashed border-neutral-200">Menu</h3>
-              <div class="py-3 px-6">
-                <ul class="flex flex-col">
-                  <li class="relative">
-                    <a href="#docs1" class="flex items-center gap-3 justify-between py-1.5 hover:text-black">
-                      <span>Introcluding</span>
-                    </a>
-                  </li>
-                  <li class="relative">
-                    <a href="#docs2" class="flex items-center gap-3 justify-between py-1.5 hover:text-black">
-                      <span>How to start?</span>
-                    </a>
-                  </li>
-                  <li class="relative">
-                    <a href="#docs3" class="flex items-center gap-3 justify-between py-1.5 hover:text-black">
-                      <span>Customize Css</span>
-                    </a>
-                  </li>
-                  <li class="relative">
-                    <a href="#docs4" class="flex items-center gap-3 justify-between py-1.5 hover:text-black">
-                      <span>Customize Js</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </aside>
-
-        <div class="max-lg:mb-12 lg:col-span-2">
-          <div id="docs1" class="relative mb-12">
-            <h2 class="text-lg uppercase font-medium border-b border-dashed border-neutral-200 pb-2">Introcluding</h2>
-            <!-- relative -->
-            <div class="relative py-6">
-              <h2 class="text-xl font-semibold mb-3">Neutral - Tailwind CSS Blog Template</h2>
-
-<p class="mb-4">Minimalism meets elegance in the "Neutral" blog template, meticulously crafted with Tailwind CSS and Alpine.js. Designed to streamline your development process while offering a visually appealing and functional starting point for your simple blog site needs.</p>
-<p><span class="font-semibold">Starting a Simple Blog Site:</span> Whether you're a beginner exploring the world of web development or an experienced developer looking for a quick and efficient solution, "Neutral" offers the perfect foundation for launching your blog site with style and sophistication.</p>
-            </div>
-          </div>
-
-          <div id="docs2" class="relative mb-12">
-            <h2 class="text-lg uppercase font-medium border-b border-dashed border-neutral-200 pb-2">How to start?</h2>
-            <!-- relative -->
-            <div class="relative py-6">
-              <h2 class="text-xl font-semibold mb-3">Tools & Setup</h2>
-                <p class="mb-4">Neutral uses NPM scripts for its build system. Our <code class="text-pink-700">package.json</code> includes convenient methods for working with the framework, including compiling code, running tests, and more.</p>
-                <p>To use our build system and run our documentation locally, you'll need a copy of theme's source files and Node. Follow these steps and you should be ready to rock:</p>
-                <ul class="list-decimal list-inside pl-8 my-4">
-                  <li class="mb-2"><a class="text-pink-700" href="https://nodejs.org/download/">Download and install Node.js</a>, which we use to manage our dependencies.</li>
-                  <li class="mb-2">Run <code class="text-pink-700">npm install --global gulp-cli</code> command. If you already installed Gulp CLI previously, you can skip this step and jump to step 3.</li>
-                  <li class="mb-2">Navigate to the root <code class="text-pink-700">neutral/</code> directory and run <code class="text-white p-2 bg-black rounded">npm install</code>.</li>
-                  <li class="mb-2">After Npm install complete, run <code class="text-white p-2 bg-black rounded">npm run dev</code> to start development.</li>
-                </ul>
-                <p>Yup, that's it.</p>
-            </div>
-          </div>
-
-          <div id="docs3" class="relative mb-12">
-            <h2 class="text-lg uppercase font-medium border-b border-dashed border-neutral-200 pb-2">Customize Css</h2>
-            <!-- relative -->
-            <div class="relative py-6">
-              <h2 class="text-xl font-semibold mb-3">How to create a new style?</h2>
-                <p class="mb-4">Most of the CSS uses the Tailwind CSS utility first, so you can edit it directly via the HTML file. To avoid file loss, overrides of your custom styles or any other conflicts during the upgrade process, create or modify your styles with add your custom css/tailwind/ in <code class="text-pink-700">src/tailwind/tailwindcss.css</code> file.</p>
-                <pre>
-                  <code class="language-html" data-lang="html">
-                    @tailwind base;
-                    @tailwind components;
-                    @tailwind utilities;
-
-                    // https://unpkg.com css
-                    // your custom css
-                  </code>
-                </pre>
-            </div>
-          </div>
-
-          <div id="docs4" class="relative mb-12">
-            <h2 class="text-lg uppercase font-medium border-b border-dashed border-neutral-200 pb-2">Customize Js</h2>
-            <!-- relative -->
-            <div class="relative py-6">
-              <h2 class="text-xl font-semibold mb-3">How to create a new Javascript?</h2>
-              <p class="mb-4">Most of the Javascript uses the Alpine js, so you can edit it directly via the HTML file. To avoid file loss, overrides of your custom js or any other conflicts during the upgrade process, create or modify your custom javascript in <code class="text-pink-700">src/scripts/scroll.js</code> file.</p>
-                <pre>
-                  <code class="language-html" data-lang="html">
-                    // Custom JS
-                    const myCustom = function () {
-                      
-                      // insert your javascript in here
-
-                    }
-                  </code>
-                </pre>
-            </div>
-          </div>
-
-          <!-- navigation -->
-          <div class="flex items-center justify-end gap-3 py-4 border-t border-dashed border-neutral-200">
-            <a class="uppercase text-neutral-500 hover:text-black flex items-center text-sm gap-2" href="#">Older Posts <i class="bi bi-arrow-right"></i></a>
-          </div>
+        <h2 class="text-6xl font-medium mb-4">404</h2>
+        <h3 class="text-2xl lg:text-3xl font-medium mb-6">Page Not Found</h3>
+        <div class="relative max-w-[150px] mx-auto mb-6">
+          <div class="h-1 border-b-2 border-dashed border-neutral-200 w-full"></div>
+          <div class="absolute end-1/2 translate-x-2.5 -top-2.5 size-6 rounded-full bg-neutral-100 border-2 border-dashed border-neutral-200"></div>
         </div>
+        <p class="text-lg text-neutral-500 mb-6">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+
+        <a href="index.html" class="mx-auto inline-flex py-2 px-4 bg-neutral-100 hover:bg-neutral-200/80 border border-dashed border-neutral-200">Back to Homepage</a>
       </div>
     </div>
   </main>
@@ -363,7 +291,7 @@
           
           <!-- footer copyright -->
           <div class="relative">
-            <p>Copyright { Name } | Theme by <a href="https://tailwindtemplate.net" target="_blank">Tailnet</a></p>
+            <p>Copyright { '{ Name }' } | Theme by <a href="https://tailwindtemplate.net" target="_blank">Tailnet</a></p>
             <!-- removing credit with small donation really helps us. Get pro version for more features -->
           </div>
         </div>
@@ -378,34 +306,8 @@
 
   <!--start::Global javascript (used in all pages)-->
 
-  <!-- prism js -->
-  <script src="src/js/prism.js"></script>
-
   <!-- theme js -->
   <script src="src/scripts/scroll.js"></script>
-
-<script>
-  // Function to handle smooth scroll when link is clicked
-  function scrollToTarget(event) {
-    event.preventDefault();
-    var targetId = this.getAttribute('href');
-    var target = document.querySelector(targetId);
-    var offset = 80; // Adjust offset as needed
-    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-    window.scrollTo({
-      top: targetPosition,
-      behavior: 'smooth'
-    });
-  }
-
-  // Add smooth scroll functionality to all links with hash
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', scrollToTarget);
-  });
-</script>
-
-
-
 </body>
 
 </html>
