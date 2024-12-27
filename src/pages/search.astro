@@ -65,9 +65,9 @@ import {Image} from 'astro:assets'
             <a href="/" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Homepage</a>
           </li>
           <!-- dropdown -->
-          <li x-data="{ dropdown: false }" class="relative  md:[&_>button]:hover:bg-neutral-100">
+          <li x-show="!location.href.includes('voumy')" x-data="\{ dropdown: false \}" class="relative  md:[&_>button]:hover:bg-neutral-100">
             <button @click="dropdown = ! dropdown" :class="! dropdown ? '' : 'bg-neutral-100'" class="uppercase w-full py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">
-              Pages<i :class="! dropdown ? '' : 'show'" class="[&.show]:-rotate-180 transition duration-400 bi bi-chevron-down"></i>
+              Comming Soon<i :class="! dropdown ? '' : 'show'" class="[&.show]:-rotate-180 transition duration-400 bi bi-chevron-down"></i>
             </button>
 
             <ul 
