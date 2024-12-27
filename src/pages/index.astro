@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import {Image} from 'astro:assets'
+import { Image } from "astro:assets";
+
+import { getCollection } from "astro:content";
+const posts = await getCollection("posts");
 ---
 
 <Layout>
@@ -15,17 +18,13 @@ import {Image} from 'astro:assets'
           class="flex items-center text-sm max-sm:grow max-sm:overflow-hidden"
         >
           <li class="relative">
-            <a href="/" class="px-3 py-1.5 hover:text-neutral-900"
-              >Home</a
-            >
+            <a href="/" class="px-3 py-1.5 hover:text-neutral-900">Home</a>
           </li>
           <li class="relative">
             <a href="#" class="px-3 py-1.5 hover:text-neutral-900">About</a>
           </li>
           <li class="relative">
-            <a href="docs" class="px-3 py-1.5 hover:text-neutral-900"
-              >Docs</a
-            >
+            <a href="docs" class="px-3 py-1.5 hover:text-neutral-900">Docs</a>
           </li>
         </ul>
 
@@ -156,15 +155,13 @@ import {Image} from 'astro:assets'
               class="[&.show]:!opacity-100 [&.show]:!visible max-md:[&.show]:!h-auto max-md:h-0 opacity-0 invisible dropdown-menu md:z-50 relative md:absolute capitalize md:top-full end-0 md:-end-1/4 min-w-40 bg-white border border-dashed border-neutral-200"
             >
               <li>
-                <a
-                  href="category"
-                  class="flex px-4 py-1.5 hover:bg-neutral-100">Category</a
+                <a href="category" class="flex px-4 py-1.5 hover:bg-neutral-100"
+                  >Category</a
                 >
               </li>
               <li>
-                <a
-                  href="single"
-                  class="flex px-4 py-1.5 hover:bg-neutral-100">Single Post</a
+                <a href="single" class="flex px-4 py-1.5 hover:bg-neutral-100"
+                  >Single Post</a
                 >
               </li>
               <li>
@@ -174,33 +171,28 @@ import {Image} from 'astro:assets'
                 >
               </li>
               <li>
-                <a
-                  href="page"
-                  class="flex px-4 py-1.5 hover:bg-neutral-100">Page</a
+                <a href="page" class="flex px-4 py-1.5 hover:bg-neutral-100"
+                  >Page</a
                 >
               </li>
               <li>
-                <a
-                  href="contact"
-                  class="flex px-4 py-1.5 hover:bg-neutral-100">Contact</a
+                <a href="contact" class="flex px-4 py-1.5 hover:bg-neutral-100"
+                  >Contact</a
                 >
               </li>
               <li>
-                <a
-                  href="author"
-                  class="flex px-4 py-1.5 hover:bg-neutral-100">Author</a
+                <a href="author" class="flex px-4 py-1.5 hover:bg-neutral-100"
+                  >Author</a
                 >
               </li>
               <li>
-                <a
-                  href="search"
-                  class="flex px-4 py-1.5 hover:bg-neutral-100">Search</a
+                <a href="search" class="flex px-4 py-1.5 hover:bg-neutral-100"
+                  >Search</a
                 >
               </li>
               <li>
-                <a
-                  href="tags"
-                  class="flex px-4 py-1.5 hover:bg-neutral-100">Tags</a
+                <a href="tags" class="flex px-4 py-1.5 hover:bg-neutral-100"
+                  >Tags</a
                 >
               </li>
               <li>
@@ -454,7 +446,13 @@ import {Image} from 'astro:assets'
                   href="#"
                   class="flex gap-2 py-3 border-b border-dashed last:border-b-0 border-neutral-200"
                 >
-                  <Image src="/img/blogs/8.jpg" alt="image" class="size-16" height={64} width={64} / />
+                  <Image
+                    src="/img/blogs/8.jpg"
+                    alt="image"
+                    class="size-16"
+                    height={64}
+                    width={64}
+                  />
                   <div class="flex flex-col gap-1">
                     <h4 class="text-sm capitalize hover:text-black">
                       Embracing A Leisurely Pace In A Fast-Paced ...
@@ -467,7 +465,13 @@ import {Image} from 'astro:assets'
                   href="#"
                   class="flex gap-2 py-3 border-b border-dashed last:border-b-0 border-neutral-200"
                 >
-                  <Image src="/img/blogs/2.jpg" alt="image" class="size-16" height={64} width={64} / />
+                  <Image
+                    src="/img/blogs/2.jpg"
+                    alt="image"
+                    class="size-16"
+                    height={64}
+                    width={64}
+                  />
                   <div class="flex flex-col gap-1">
                     <h4 class="text-sm capitalize hover:text-black">
                       How To Stay Productive While Traveling For ...
@@ -480,7 +484,13 @@ import {Image} from 'astro:assets'
                   href="#"
                   class="flex gap-2 py-3 border-b border-dashed last:border-b-0 border-neutral-200"
                 >
-                  <Image src="/img/blogs/5.jpg" alt="image" class="size-16" height={64} width={64} / />
+                  <Image
+                    src="/img/blogs/5.jpg"
+                    alt="image"
+                    class="size-16"
+                    height={64}
+                    width={64}
+                  />
                   <div class="flex flex-col gap-1">
                     <h4 class="text-sm capitalize hover:text-black">
                       Master Photography: Tips For Capturing ...
@@ -493,7 +503,13 @@ import {Image} from 'astro:assets'
                   href="#"
                   class="flex gap-2 py-3 border-b border-dashed last:border-b-0 border-neutral-200"
                 >
-                  <Image src="/img/blogs/1.jpg" alt="image" class="size-16" height={64} width={64} / />
+                  <Image
+                    src="/img/blogs/1.jpg"
+                    alt="image"
+                    class="size-16"
+                    height={64}
+                    width={64}
+                  />
                   <div class="flex flex-col gap-1">
                     <h4 class="text-sm capitalize hover:text-black">
                       The Tourist Destination That You Must Visit ...
@@ -627,7 +643,13 @@ import {Image} from 'astro:assets'
                 class="aspect-[2/1] md:aspect-[3/2] overflow-hidden w-full bg-neutral-100"
               >
                 <a href="#">
-                  <Image class="w-full" height={100} width={100} / src="/img/blogs/1.jpg" alt="image" />
+                  <Image
+                    class="w-full"
+                    height={100}
+                    width={100}
+                    src="/img/blogs/1.jpg"
+                    alt="image"
+                  />
                 </a>
               </div>
 
@@ -678,7 +700,13 @@ import {Image} from 'astro:assets'
                 class="aspect-[2/1] md:aspect-[3/2] overflow-hidden w-full bg-neutral-100"
               >
                 <a href="#">
-                  <Image class="w-full" height={100} width={100} / src="/img/blogs/8.jpg" alt="image" />
+                  <Image
+                    class="w-full"
+                    height={100}
+                    width={100}
+                    src="/img/blogs/8.jpg"
+                    alt="image"
+                  />
                 </a>
               </div>
 
@@ -778,7 +806,13 @@ import {Image} from 'astro:assets'
                 href="#"
                 class="flex gap-2 py-3 border-b border-dashed last:border-b-0 border-neutral-200"
               >
-                <Image src="/img/blogs/2.jpg" alt="image" class="size-16" height={64} width={64} / />
+                <Image
+                  src="/img/blogs/2.jpg"
+                  alt="image"
+                  class="size-16"
+                  height={64}
+                  width={64}
+                />
                 <div class="flex flex-col gap-1">
                   <h4 class="text-sm capitalize hover:text-black">
                     The Tourist Destination That You Must Visit ...
@@ -791,7 +825,13 @@ import {Image} from 'astro:assets'
                 href="#"
                 class="flex gap-2 py-3 border-b border-dashed last:border-b-0 border-neutral-200"
               >
-                <Image src="/img/blogs/8.jpg" alt="image" class="size-16" height={64} width={64} / />
+                <Image
+                  src="/img/blogs/8.jpg"
+                  alt="image"
+                  class="size-16"
+                  height={64}
+                  width={64}
+                />
                 <div class="flex flex-col gap-1">
                   <h4 class="text-sm capitalize hover:text-black">
                     Embracing A Leisurely Pace In A ...
@@ -804,7 +844,13 @@ import {Image} from 'astro:assets'
                 href="#"
                 class="flex gap-2 py-3 border-b border-dashed last:border-b-0 border-neutral-200"
               >
-                <Image src="/img/blogs/6.jpg" alt="image" class="size-16" height={64} width={64} / />
+                <Image
+                  src="/img/blogs/6.jpg"
+                  alt="image"
+                  class="size-16"
+                  height={64}
+                  width={64}
+                />
                 <div class="flex flex-col gap-1">
                   <h4 class="text-sm capitalize hover:text-black">
                     How To Work And Travel Successfully In The ...
@@ -823,7 +869,17 @@ import {Image} from 'astro:assets'
               Popular Posts
             </h3>
             <div class="flex flex-col">
-              <a
+              {
+                posts.map((post) => (
+                  <a href={`/posts/${post.slug}`} class="py-3 border-b border-dashed last:border-b-0 border-neutral-200">
+                    <div class="flex flex-col gap-1">
+                      <h4 class="text-sm font-medium capitalize hover:text-black">
+                    {post.data.title} </h4>
+                  <span class="text-sm text-neutral-500">12 May, 2024</span>
+                </div></a>
+                ))
+              }
+              <!-- <a
                 href="#"
                 class="py-3 border-b border-dashed last:border-b-0 border-neutral-200"
               >
@@ -859,7 +915,7 @@ import {Image} from 'astro:assets'
                   </h4>
                   <span class="text-sm text-neutral-500">12 May, 2024</span>
                 </div>
-              </a>
+              </a> -->
             </div>
           </div>
         </div>
