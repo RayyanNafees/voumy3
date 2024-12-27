@@ -10,9 +10,9 @@ import {Image} from 'astro:assets'
     <div class="border-b border-dashed border-neutral-200">
       <div class="container xl:max-w-6xl mx-auto px-4 flex items-center justify-between gap-3">
         <ul class="max-sm:grow max-sm:overflow-hidden flex items-center text-sm">
-          <li class="relative"><a href="index.html" class="py-1.5 px-3 hover:text-neutral-900">Home</a></li>
+          <li class="relative"><a href="/" class="py-1.5 px-3 hover:text-neutral-900">Home</a></li>
           <li class="relative"><a href="#" class="py-1.5 px-3 hover:text-neutral-900">About</a></li>
-          <li class="relative"><a href="docs.html" class="py-1.5 px-3 hover:text-neutral-900">Docs</a></li>
+          <li class="relative"><a href="docs" class="py-1.5 px-3 hover:text-neutral-900">Docs</a></li>
         </ul>
         
         <!-- social icon -->
@@ -45,7 +45,7 @@ import {Image} from 'astro:assets'
             <i :class="{ 'hidden': navtoggle, 'block': !(navtoggle) }" class="bi bi-list"></i>
           </button>
 
-          <a href="index.html" class="py-4 md:py-6 lg:py-12">
+          <a href="/" class="py-4 md:py-6 lg:py-12">
             <h2 class="text-4xl md:text-5xl font-medium">NEUTRAL</h2>
             <!-- <Image src="..//img/logo.png">-->
           </a>
@@ -62,7 +62,7 @@ import {Image} from 'astro:assets'
         <!-- menu -->
         <ul class="relative flex md:items-center md:justify-center max-md:flex-col max-md:h-full max-md:overflow-auto text-sm md:text-base uppercase">
           <li class="relative">
-            <a href="index.html" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Homepage</a>
+            <a href="/" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Homepage</a>
           </li>
           <!-- dropdown -->
           <li x-data="{ dropdown: false }" class="relative  md:[&_>button]:hover:bg-neutral-100">
@@ -77,45 +77,45 @@ import {Image} from 'astro:assets'
             @click.outside="dropdown = false"
             class="[&.show]:!opacity-100 [&.show]:!visible max-md:[&.show]:!h-auto max-md:h-0 opacity-0 invisible dropdown-menu md:z-50 relative md:absolute capitalize md:top-full end-0 md:-end-1/4 min-w-40 bg-white border border-dashed border-neutral-200">
               <li>
-                <a href="category.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Category</a>
+                <a href="category" class="flex px-4 py-1.5 hover:bg-neutral-100">Category</a>
               </li>
               <li>
-                <a href="single.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Single Post</a>
+                <a href="single" class="flex px-4 py-1.5 hover:bg-neutral-100">Single Post</a>
               </li>
               <li>
-                <a href="single-fullwidth.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Fullwidth</a>
+                <a href="single-fullwidth" class="flex px-4 py-1.5 hover:bg-neutral-100">Fullwidth</a>
               </li>
               <li>
-                <a href="page.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Page</a>
+                <a href="page" class="flex px-4 py-1.5 hover:bg-neutral-100">Page</a>
               </li>
               <li>
-                <a href="contact.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Contact</a>
+                <a href="contact" class="flex px-4 py-1.5 hover:bg-neutral-100">Contact</a>
               </li>
               <li>
-                <a href="author.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Author</a>
+                <a href="author" class="flex px-4 py-1.5 hover:bg-neutral-100">Author</a>
               </li>
               <li>
-                <a href="search.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Search</a>
+                <a href="search" class="flex px-4 py-1.5 hover:bg-neutral-100">Search</a>
               </li>
               <li>
-                <a href="tags.html" class="flex px-4 py-1.5 hover:bg-neutral-100">Tags</a>
+                <a href="tags" class="flex px-4 py-1.5 hover:bg-neutral-100">Tags</a>
               </li>
               <li>
-                <a href="404.html" class="flex px-4 py-1.5 hover:bg-neutral-100">404</a>
+                <a href="404" class="flex px-4 py-1.5 hover:bg-neutral-100">404</a>
               </li>
             </ul>
           </li>
           <li class="relative">
-            <a href="docs/free-vs-pro.html" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Free vs Pro</a>
+            <a href="docs/free-vs-pro" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Free vs Pro</a>
           </li>
           <li class="relative">
-            <a href="category.html" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Travel</a>
+            <a href="category" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Travel</a>
           </li>
           <li class="relative">
-            <a href="category.html" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Lifestyle</a>
+            <a href="category" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Lifestyle</a>
           </li>
           <li class="relative">
-            <a href="category.html" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Techno</a>
+            <a href="category" class="py-2 px-4 flex max-md:justify-between gap-2 [&.active]:text-black [&.active]:bg-neutral-100 hover:text-black hover:bg-neutral-100">Techno</a>
           </li>
 
           <li class="relative max-md:hidden">
