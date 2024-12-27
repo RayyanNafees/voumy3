@@ -1,22 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+import Layout from "../layouts/Layout.astro";
+---
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neutral - Tailwind Blog Template</title>
-
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="src/css/style.css">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon.png">
-  <!-- local icons -->
-  <link rel="stylesheet" id="icons" href="https://unpkg.com/bootstrap-icons/font/bootstrap-icons.min.css">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;900&amp;display=swap" rel="stylesheet">
-</head>
-
-<body class="text-neutral-700 font-sans">
+<Layout>
   <!-- header -->
   <header x-data="{ navtoggle: false }" class="flex flex-col">
     <!-- top -->
@@ -647,6 +633,4 @@
 
   <!-- theme js -->
   <script src="src/scripts/scroll.js"></script>
-</body>
-
-</html>
+  </Layout>
