@@ -17,6 +17,7 @@ export default defineConfig({
 		alpinejs(),
 	],
 
-	output: "static",
+	output: "server",
 	adapter: vercel(),
+	prefetch: true
 });
