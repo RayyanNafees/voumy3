@@ -16,10 +16,9 @@ export default defineConfig({
 		preact({ compat: true, devtools: true }),
 		alpinejs(),
 	],
-
-	output: "server",
+	output: "hybrid",
 	adapter: vercel(),
-	prefetch: {
-		prefetchAll: true,
-	},
+	// prefetch: {
+	// 	prefetchAll: true,
+	// },
 });
